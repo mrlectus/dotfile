@@ -4,8 +4,6 @@ if command -v nvim &> /dev/null; then
     exit
 fi
 
-sudo apt-get update -y
-sudo add-apt-repository ppa:neovim-ppa/stable -y
-sudo apt-get update -y
-sudo apt-get install neovim -y
-sudo apt-get install python-dev-is-python3 python-pip python3-dev python3-pip -y
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz

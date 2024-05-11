@@ -151,9 +151,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source /home/brown/.aliases
-source /home/brown/.bash_functions
-alias luamake=/home/brown/lua-language-server/3rd/luamake/luamake
+source ${HOME}/.aliases
+source ${HOME}/.bash_functions
+alias luamake=${HOME}/lua-language-server/3rd/luamake/luamake
 LF_ICONS=$(sed ~/.config/lf/diricons \
             -e '/^[ \t]*#/d'       \
             -e '/^[ \t]*$/d'       \
@@ -165,13 +165,13 @@ PROMPT_EOL_MARK=''
 typeset -aU path
 
 export WINEPREFIX="$XDG_DATA_HOME"/wine
-export RUST=/home/brown/.cargo/bin
+export RUST=${HOME}/.cargo/bin
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-export PATH=/usr/local/bin:$JDTLS_HOME:$GO:$LTEX:$GEM:$TOMCAT:$SCALA_BIN:$LOCAL_BIN:$QT5:$RUST:$VSCodium:$VIMRUNTIME:$ANDROID_HOME:$ANDROID_EMULATOR_HOME:$ANDROID_PREFS_ROOT/build-tools/29.0.3:$P4MERGE:$JAVA_JDK:$ANDROID_PREFS_ROOT/emulator/:$LOCAL_BIN:$ANDROID_PREFS_ROOT/system-images/:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:/home/brown/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
+export PATH=/usr/local/bin:$JDTLS_HOME:$GO:$LTEX:$GEM:$TOMCAT:$SCALA_BIN:$LOCAL_BIN:$QT5:$RUST:$VSCodium:$VIMRUNTIME:$ANDROID_HOME:$ANDROID_EMULATOR_HOME:$ANDROID_PREFS_ROOT/build-tools/29.0.3:$P4MERGE:$JAVA_JDK:$ANDROID_PREFS_ROOT/emulator/:$LOCAL_BIN:$ANDROID_PREFS_ROOT/system-images/:$SASS:$DART:$ROBO_3T:$NODE:$GROOVY_BIN:$GRADEL_BIN:/usr/bin:/bin:/usr/local/games:/usr/games:$HOME/.local/bin:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.local/bin:/usr/local/lib/nodejs/bin:/snap/bin:$MVN_HOME:$MVN_BIN:~/.config/composer/vendor/bin:$STUDIO_HOME:$PATH
 
 # pnpm
-export PNPM_HOME="/home/brown/.local/share/pnpm"
+export PNPM_HOME="${HOME}/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -209,11 +209,12 @@ export BEMENU_OPTS="--tb '#6272a4'\
  --sf '#50fa7b'\
  --scb '#282a36'\
  --scf '#ff79c6'"
-source /home/brown/.zshenv
+source ${HOME}/.zshenv
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-source /home/brown/.config/broot/launcher/bash/br
+source ${HOME}/.config/broot/launcher/bash/br
 
 # bun completions
-[ -s "/home/brown/.bun/_bun" ] && source "/home/brown/.bun/_bun"
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+export PATH="$PATH:/opt/nvim-linux64/bin"
