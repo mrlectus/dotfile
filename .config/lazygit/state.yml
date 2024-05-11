@@ -1,5 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/brown/dotfile
 - /home/brown/Code/extensions/circle_ext
 - /home/brown/Code/circlebe
 - /home/brown/Code/codecrafters-redis-typescript
@@ -13,7 +14,6 @@ recentrepos:
 - /home/brown/Code/analytics_dashboard
 - /home/brown/Code/KOOK-Backend
 - /home/brown/Code/rubi-admin
-- /home/brown/.config/nvim
 - /home/brown/Code/python/langchain-rag
 - /home/brown/Code/slanpay
 - /home/brown/Code/rust/codecrafters-bittorrent-rust
@@ -36,7 +36,6 @@ recentrepos:
 - /home/brown/Code/utilities
 - /home/brown/Code/project/Betty
 - /home/brown/Code/rust/rustaoc2015
-- /home/brown/dotfiles
 - /home/brown/Code/aws_cloud_practitioner
 startuppopupversion: 5
 lastversion: 0.41.0
