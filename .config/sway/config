@@ -157,6 +157,7 @@ assign [class="^Gimp-2.10$"] 2
 assign [class="^Google-chrome$"] 1
 assign [class="^Insomnia$"] 10
 assign [class="^Mate-terminal$"] 2
+assign [class="^Thorium-browser$"] 1
 assign [class="^Navigator$"] 1
 assign [class="^Nightly$"] 1
 assign [class="^VSCodium$"] 4

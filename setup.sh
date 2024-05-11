@@ -6,7 +6,7 @@ CURRENT=$PWD
 
 cd "$TMPDIR" || exit
 
-for script in ~/.dotfile/scripts/*; do
+for script in ~/.dotfiles/scripts/*; do
   bash "$script"
 done
 
