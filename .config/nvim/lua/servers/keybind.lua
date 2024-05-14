@@ -144,11 +144,6 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 map("v", "j", "gj", { silent = true })
 map("v", "k", "gk", { silent = true })
 
--- Floating stuffnnn
-map("n", "<leader>t", ":FloatermToggle<CR>", opts)
-map("n", "<leader>t", "<Esc>:FloatermToggle<CR>", opts)
-map("t", "<leader>t", "<C-\\><C-n>:FloatermToggle<CR>", opts)
-
 -- turn off search highlighting with <CR> (carriage-return)
 map("n", "<CR>", ":nohlsearch<CR><CR>", opts)
 map("n", "<F13>", ":NvimTreeToggle()<CR>", opts)

@@ -9,7 +9,6 @@ include i3/themes/catppuccin-mocha
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-exec wl-paste -t text --watch clipman store 1>> /home/brown/.clipman/wl-paste.log 2>&1 &
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -136,6 +135,7 @@ assign [app_id="^kitty$"] 2
 assign [app_id="^chromium$"] 1
 assign [app_id="^org.wezfurlong.wezterm$"] 2
 assign [app_id="^mpv$"] 5
+assign [app_id="^rhythmbox$"] 5
 assign [app_id="^org.gnome.Nautilus$"] 3
 assign [app_id="^org.pwmt.zathura$"] 6
 assign [app_id="^org.qbittorrent.qBittorrent$"] 8
@@ -224,7 +224,7 @@ bindsym $mod+Return exec $term
 ##bindsym $mod+Return exec  wmctrl -x -a "alacritty" || $term -e tmux
 #bindsym $mod+Return exec  wezterm
 # bindsym $mod+Alt+h exec clipman pick --tool wofi -T'--prompt=my-prompt -i'
-bindsym $mod+Alt+h exec clipman pick --tool bemenu
+bindsym $mod+Alt+h exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
 
 # Toggle workspace.
 bindsym $mod+Tab workspace back_and_forth
@@ -394,3 +394,4 @@ bindsym $mod+Shift+r mode "resize"
 bindsym Mod4+e exec /home/brown/.local/bin/wofi-emoji
 # exec_always autotiling
 exec_always wlsunset -l 9.076479 -L 7.398574
+exec wl-paste --watch cliphist store

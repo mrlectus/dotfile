@@ -76,9 +76,6 @@ set.hlsearch = true  -- highlight matches
 vim.g.indentLine_setColors = 0
 vim.g.indentLine_char = "▏"
 
-vim.g.floaterm_width = 100
-vim.g.floaterm_winblend = 30
-
 vim.g.python_host_prog = "/bin/python2.7"
 vim.g.python3_host_prog = "/bin/python3"
 vim.g.perl_host_prog = "/bin/perl"

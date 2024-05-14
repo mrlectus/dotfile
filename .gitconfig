@@ -18,6 +18,7 @@
   packedGitWindowSize = 512m
 	compression = 9
 	compression = 9
+	pager = less -F -X
 [pack]
   deltaCacheSize = 2047m
   packSizeLimit = 2047m

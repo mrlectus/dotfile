@@ -1,5 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/brown/Code/MongoRAG-Bounty/BEMongoRAG-Bounty
+- /home/brown/Code/MongoRAG-Bounty/FEMongoRAG-Bounty
 - /home/brown/dotfile
 - /home/brown/Code/extensions/circle_ext
 - /home/brown/Code/circlebe
@@ -44,7 +46,7 @@ customcommandshistory:
 - betty
 - removed
 hidecommandlog: false
-ignorewhitespaceindiffview: false
+ignorewhitespaceindiffview: true
 diffcontextsize: 3
 localbranchsortorder: recency
 remotebranchsortorder: alphabetical
