@@ -80,7 +80,7 @@ vim.g.python_host_prog = "/bin/python2.7"
 vim.g.python3_host_prog = "/bin/python3"
 vim.g.perl_host_prog = "/bin/perl"
 vim.g.node_host_prog = "/bin/neovim-node-host"
-vim.g.ruby_host_prog = "/home/brown/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host"
+vim.g.ruby_host_prog = "$HOME/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host"
 
 vim.g.dashboard_default_executive = "telescope"
 
