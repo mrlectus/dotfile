@@ -10,4 +10,3 @@ require("nvim-tree").setup({
     },
   },
 })
-require("mini.comment").setup()
