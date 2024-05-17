@@ -82,7 +82,7 @@ ins_left({
     return "▊"
   end,
   color = { fg = colors.blue }, -- Sets highlighting of component
-  left_padding = 0, -- We don't need space before this
+  left_padding = 0,            -- We don't need space before this
 })
 
 ins_left({
@@ -176,7 +176,7 @@ ins_left({
   function()
     local msg = "No Active Lsp"
     local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-    local clients = vim.lsp.get_active_clients()
+    local clients = vim.lsp.get_clients()
     if next(clients) == nil then
       return msg
     end

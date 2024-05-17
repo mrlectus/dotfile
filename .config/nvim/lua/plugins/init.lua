@@ -1,28 +1,7 @@
 return {
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      -- triggers CursorHold event faster
-    },
-  },
-  --{
-  -- "Bekaboo/dropbar.nvim",
-  -- optional, but required for fuzzy finder support
-  -- dependencies = {
-  --  "nvim-telescope/telescope-fzf-native.nvim",
-  -- },
-  -- },
-  { "David-Kunz/gen.nvim" },
-  { "echasnovski/mini.nvim", version = "*" },
+  { "echasnovski/mini.nvim",      version = "*" },
   "p00f/clangd_extensions.nvim",
   "github/copilot.vim",
-  "neoclide/vim-jsx-improve",
   {
     "neovim/nvim-lspconfig",
     inlay_hints = { enabled = true },
@@ -68,8 +47,6 @@ return {
   "navarasu/onedark.nvim",
   "udalov/kotlin-vim",
   "hood/popui.nvim",
-  -- { "romgrk/barbar.nvim", dependencies = "nvim-web-devicons" },
-  --
   {
     "akinsho/bufferline.nvim",
     version = "v3.*",
@@ -78,7 +55,6 @@ return {
   "simrat39/rust-tools.nvim",
   { "akinsho/flutter-tools.nvim",         dependencies = "nvim-lua/plenary.nvim" },
   "simrat39/symbols-outline.nvim",
-  { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
   {
     "ray-x/lsp_signature.nvim",
     event = "VeryLazy",
