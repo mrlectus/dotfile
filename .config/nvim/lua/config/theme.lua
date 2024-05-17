@@ -46,4 +46,17 @@ require("catppuccin").setup({
 local color = { "catppuccin", "onedark" }
 math.randomseed(os.time())
 vim.cmd.colorscheme(color[math.random(#color)])
-require("lualine").setup({ options = { theme = "auto" } })
+require("lualine").setup({
+  options = {
+    theme = "auto",
+    sections = {
+      lualine_x = {
+        {
+          "rest",
+          icon = "",
+          fg = "#428890",
+        },
+      },
+    },
+  },
+})

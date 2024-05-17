@@ -156,9 +156,8 @@ map("n", "<leader>sl", ":SessionLoad<CR>", opts)
 --map("n", "ff", "vim.lsp.buf.formatting()<CR>", opts)
 --map("n", "<leader>s", "vim.lsp.buf.formatting()<CR>", opts)
 --
-map("n", "<leader>rr", "<Plug>RestNvim", {})
-map("n", "<leader>rl", "<Plug>RestNvimLast", {})
-map("n", "<leader>rp", "<Plug>RestNvimPreview", {})
+map("n", "<leader>rr", "<Plug>Rest run", {})
+map("n", "<leader>rl", "<Plug>Rest run last", {})
 
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 -- Jumping
