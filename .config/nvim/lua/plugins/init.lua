@@ -44,7 +44,10 @@ return {
   "kdheepak/lazygit.nvim",
   "nvim-treesitter/playground",
   "onsails/lspkind-nvim",
-  "navarasu/onedark.nvim",
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
   "udalov/kotlin-vim",
   "hood/popui.nvim",
   {
