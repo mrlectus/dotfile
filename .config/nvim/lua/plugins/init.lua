@@ -44,6 +44,7 @@ return {
   "kdheepak/lazygit.nvim",
   "nvim-treesitter/playground",
   "onsails/lspkind-nvim",
+  { "EdenEast/nightfox.nvim" }, -- lazy
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
@@ -56,7 +57,7 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
   },
   "simrat39/rust-tools.nvim",
-  { "akinsho/flutter-tools.nvim",         dependencies = "nvim-lua/plenary.nvim" },
+  { "akinsho/flutter-tools.nvim", dependencies = "nvim-lua/plenary.nvim" },
   "simrat39/symbols-outline.nvim",
   {
     "ray-x/lsp_signature.nvim",

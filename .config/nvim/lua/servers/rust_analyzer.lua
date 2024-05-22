@@ -31,4 +31,4 @@ local opts = {
 
 require("rust-tools").setup(opts)
 require("lspconfig").zls.setup({})
--- require("lspconfig").move_analyzer.setup({})
+require("lspconfig").move_analyzer.setup({})
