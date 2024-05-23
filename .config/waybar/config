@@ -1,134 +1,213 @@
 {
-    "layer": "top",
-    "modules-left": ["custom/arch", "sway/workspaces", "sway/window"],
-    "modules-center": ["clock", "memory", "custom/notification"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "bluetooth", "network",
-    "tray"],
-
-    // Modules configuration
-     "sway/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": true,
-         "format": "{icon}",
-         "format-icons": {
-             "1": " ",
-             "2": " ",
-             "3": " ",
-             "4": "",
-             "5": " ",
-             "6": " ",
-             "7": " ",
-             "8": " ",
-             "9": " ﭮ",
-             "10": " ",
-             "urgent": " ",
-             "focused": " ",
-             "default": " "
-         }
-     },
-
-    "memory": {
-       "interval": 30,
-       "format": "{used:0.1f}G/{total:0.1f}G  "
+  "layer": "top",
+  "modules-left": [
+    "custom/arch",
+    "sway/mode",
+    "wlr/taskbar",
+    "sway/window"
+  ],
+  "modules-center": [
+    "clock",
+    "memory"
+  ],
+  "modules-right": [
+    "custom/notification",
+    "pulseaudio",
+    "network",
+    "battery",
+    "tray"
+  ],
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 27,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "markup": true,
+    "active-first": true,
+    "tooltip": false,
+    "on-click-middle": "close",
+    "ignore-list": [],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
     },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
+  },
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - vim": " $1",
+      "(.*) - zsh": " [$1]"
+    }
+  },
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "🌎 ",
+      "2": " ",
+      "3": " ",
+      "4": "",
+      "5": " ",
+      "6": "󰲇",
+      "7": " ",
+      "8": " ",
+      "9": "",
+      "10": " ",
+      "urgent": " ",
+      "focused": " ",
+      "default": " "
+    }
+  },
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
-    "sway/language": {
-        "format": "{short} ⠀⠀"
+    "sort-by-number": true
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{used:0.1f}G/{total:0.1f}G "
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "sway/mode": {
+    "format": " {}",
+    "max-length": 50
+  },
+  "sway/language": {
+    "format": "{short} ⠀"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " "
     },
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " "
-        },
-        "temperature": {
-          "critical-threshold": 80,
-          "format": "{temperatureC}°C {icon}",
-          "format-icons": [" ", " ", " "]
-        }
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{temperatureC}°C {icon}",
+      "format-icons": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃠"
+    ],
+    "on-scroll-up": "light -A 1",
+    "on-scroll-down": "light -U 1"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": [" ", " "],
-        "on-scroll-up": "light -A 1",
-        "on-scroll-down": "light -U 1"
+    "format": "{icon} {capacity}%",
+    "tooltip-format": "{timeTo}, {capacity}%",
+    "format-charging": "󱊦 {capacity}%",
+    "on-click-middle": "adios --ab",
+    "format-plugged": " ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "interface": "wlan0",
+    "interval": 10,
+    "format-wifi": "󰖩 {essid} {bandwidthDownBytes}",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+    "format-linked": "{ifname} (No IP)  ",
+    "format-disconnected": "睊 ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{essid} {signalStrength}%"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} ",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰋐",
+      "headset": "󰋍",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
     },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "tooltip-format": "{timeTo}, {capacity}%",
-        "format-charging": " {capacity}%",
-        "on-click-middle":"adios --ab",
-        "format-plugged": " ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": " ",
+      "default": " "
     },
-    "network": {
-        "interface": "wlan0",
-        "interval": 10,
-        "format-wifi": "直 {essid} {bandwidthDownBits}",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
-        "format-linked": "{ifname} (No IP)  ",
-        "format-disconnected": "睊 ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{essid} {signalStrength}%"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "   {volume}% {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": " ",
-        "format-source-muted": " ",
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [" ", " ", " "]
-        },
-        "tooltip-format": "{desc}, {volume}%",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-click-middle": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": " ",
-            "default": " "
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
-        "on-click": "playerctl play-pause",
-    },
-    "custom/fans": {
-        "format": "{}",
-        "exec": "$HOME/.config/waybar/fans.sh",
-        "escape": true,
-        "restart-interval": 10,
-    },
-    "custom/arch":{
-        "format": "{icon} {}",
-        "on-click": "sirula",
-        "return-type": "json",
-        "format-icons": {
-            "arch": "  ",
-            "default": "  "
-        }
-    },
-
-    "custom/notification": {
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+    "on-click": "playerctl play-pause"
+  },
+  "custom/fans": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/fans.sh",
+    "escape": true,
+    "restart-interval": 10
+  },
+  "custom/arch": {
+    "format": "{icon} {}",
+    "on-click": "sirula",
+    "return-type": "json",
+    "format-icons": {
+      "arch": " ",
+      "default": " "
+    }
+  },
+  "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
