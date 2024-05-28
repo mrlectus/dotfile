@@ -13,7 +13,8 @@
     "custom/spotify"
   ],
   "modules-right": [
-    "group/notifications"
+    "group/notifications",
+    "tray"
   ],
   "tray": {
     "icon-size": 20,

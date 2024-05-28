@@ -15,7 +15,7 @@
 
 * {
   color: @text;
-  font-family: Liga SFMono Nerd Font;
+  font-family: MonaspiceKr NFP;
 }
 
 .notification-row {
@@ -29,8 +29,6 @@
 
 .notification {
   background-color: @base;
-  border: 5px solid @surface0;
-  border-radius: 1em;
   margin: 6px 12px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3),
     0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
@@ -40,7 +38,6 @@
 /* .low {
   background: yellow;
   padding: 6px;
-  border-radius: 12px;
 }
 .normal {
   background: green;
@@ -63,7 +60,6 @@
   color: white;
   text-shadow: none;
   padding: 0;
-  border-radius: 1em;
   margin-top: 10px;
   margin-right: 16px;
   box-shadow: none;
@@ -95,44 +91,27 @@
   background: @noti-bg-hover;
 }
 
-.notification-default-action {
-  border-radius: 12px;
-}
 
 /* When alternative actions are visible */
-.notification-default-action:not(:only-child) {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
 
 .notification-action {
-  border-radius: 0px;
   border-top: none;
   border-right: none;
 }
 
-/* add bottom border radius to eliminate clipping */
-.notification-action:first-child {
-  border-bottom-left-radius: 10px;
-}
 
 .notification-action:last-child {
-  border-bottom-right-radius: 10px;
   border-right: 1px solid @noti-border-color;
-}
-
-.image {
 }
 
 .body-image {
   margin-top: 6px;
   background-color: white;
-  border-radius: 12px;
 }
 
 /* notification setting */
 .summary {
-  font-size: 30px;
+  font-size: 14px;
   font-weight: bold;
   background: transparent;
   color: white;
@@ -140,7 +119,7 @@
 }
 
 .time {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
   background: transparent;
   color: white;
@@ -149,7 +128,7 @@
 }
 
 .body {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: normal;
   background: transparent;
   color: white;
@@ -165,7 +144,6 @@
 .control-center {
   background-color: @base;
   border: 5px solid @surface0;
-  border-radius: 3em;
 }
 
 .control-center-list {
@@ -186,50 +164,42 @@
 /* Title widget */
 .widget-title {
   margin: 8px;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-.widget-title > button {
+.widget-title>button {
   font-size: 1.5rem;
   color: white;
   background: @mantle;
   border: 3px solid @surface0;
-  border-radius: 12px;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: @noti-bg-hover;
 }
 
 /* DND widget */
 .widget-dnd {
   margin: 8px;
-  font-size: 2.2rem;
+  font-size: 1.2rem;
 }
 
-.widget-dnd > switch {
-  border-radius: 12px;
+.widget-dnd>switch {
   background: @mantle;
   border: 5px solid @surface0;
   box-shadow: none;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: @bg-selected;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   font-size: 1.5rem;
   background: @noti-bg-hover;
-  border-radius: 12px;
 }
 
-
-/* Mpris widget */
-.widget-mpris {
-  /* The parent to all players */
-}
 
 .widget-mpris-player {
   padding: 8px;
@@ -252,7 +222,4 @@
   background-color: @mantle;
   padding: 4px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
 }
-
