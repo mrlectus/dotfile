@@ -212,6 +212,7 @@ exec nm-applet --indicator
 
 #exec twmnd
 exec swaync
+exec eww daemon
 
 
 

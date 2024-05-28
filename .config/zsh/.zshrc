@@ -8,21 +8,9 @@ fi
 # confirmations, etc.) must go above this block; everything else may go below.
 #
 #
+
 Z_THEME=catppuccin_mocha-zsh-syntax-highlighting.zsh
 source "${HOME}/.config/zsh/${Z_THEME}"
-
-if [[ -z "$ZELLIJ" ]]; then
-    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-        zellij attach glowing-mountain
-    else
-        zellij
-    fi
-
-    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-        exit
-    fi
-fi
-
 
 autoload bashcompinit
 bashcompinit
@@ -548,3 +536,12 @@ fi
 # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
 #
 # eval "$(zoxide init zsh)"
+#
+ZELLIJ_AUTO_ATTACH="true"
+if [[ -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        zellij attach mrlectus
+    else
+        zellij
+    fi
+fi

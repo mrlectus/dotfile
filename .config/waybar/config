@@ -7,19 +7,24 @@
     "sway/window"
   ],
   "modules-center": [
+    "custom/updates",
     "clock",
-    "memory"
+    "memory",
+    "custom/spotify"
   ],
   "modules-right": [
-    "custom/notification",
-    "pulseaudio",
-    "network",
-    "battery",
-    "tray"
+    "group/notifications"
   ],
   "tray": {
     "icon-size": 20,
     "spacing": 10
+  },
+  "custom/spotify": {
+    "exec": "$HOME/.config/waybar/scripts/spotify.sh",
+    "max-length": 40,
+    "format": " {}",
+    "on-click": "sleep 0.1 && eww open --toggle dashboard",
+    "tooltip": false
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -208,24 +213,43 @@
     }
   },
   "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
+    "escape": true,
     "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "exec-if": "which swaync-client",
+    "format": " {icon} ",
+    "format-icons": {
+      "dnd-inhibited-none": "󰂚<sup></sup>",
+      "dnd-inhibited-notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>",
+      "dnd-none": "󰂛",
+      "dnd-notification": "󰂛<span foreground='#f38ba8'><sup></sup></span>",
+      "inhibited-none": "󰂚<sup>󰜺</sup>",
+      "inhibited-notification": "󰵙<span foreground='#f38ba8'><sup></sup></span>",
+      "none": "󰂚<span color='#6c7086'><sup></sup></span>",
+      "notification": "󰂚<span foreground='#f38ba8'><sup></sup></span>"
+    },
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "return-type": "json",
+    "tooltip": false
+  },
+  "group/notifications": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "custom/notification",
+      "battery",
+      "network"
+    ]
+  },
+  "custom/updates": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󱍷",
+      "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates"
   },
   "custom/wl-gammarelay-temperature": {
     "format": "{} ",
