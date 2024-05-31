@@ -7,7 +7,6 @@
     "sway/window"
   ],
   "modules-center": [
-    "custom/updates",
     "clock",
     "memory",
     "custom/spotify"
@@ -142,7 +141,7 @@
     },
     "format": "{icon} {capacity}%",
     "tooltip-format": "{timeTo}, {capacity}%",
-    "format-charging": "󱊦 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
     "on-click-middle": "adios --ab",
     "format-plugged": " ",
     "format-alt": "{time} {icon}",
